@@ -1,4 +1,4 @@
-class_name DashingState extends State
+class_name DashingState extends Moving
 
 var time_elapsed: float 
 var dash_duration: float = 0.5

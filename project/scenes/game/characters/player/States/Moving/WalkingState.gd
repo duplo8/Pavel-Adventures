@@ -1,4 +1,4 @@
-class_name WalkingState extends State
+class_name WalkingState extends Moving
 
 @onready var parent: Node = get_parent()
 

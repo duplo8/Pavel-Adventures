@@ -1,4 +1,4 @@
-class_name IdleState extends State
+class_name IdleState extends Moving
 
 
 func on_enter() -> void:

@@ -1,4 +1,4 @@
-class_name AttackState extends State
+class_name AttackState extends Attacking
 
 @onready var attack_cooldown: Timer = $attack_cooldown
 

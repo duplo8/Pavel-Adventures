@@ -1,4 +1,4 @@
-class_name AirState extends State
+class_name AirState extends Moving
 
 
 #@onready var double_jump_velocity: float = get_parent().double_jump_velocity

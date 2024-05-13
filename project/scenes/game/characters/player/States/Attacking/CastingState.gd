@@ -1,4 +1,4 @@
-class_name CastingState extends State
+class_name CastingState extends Attacking
 
 @onready var magic_handler: Node = $magic_handler
 

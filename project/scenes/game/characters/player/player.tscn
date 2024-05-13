@@ -8,19 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://cvxb8iw1q3vbf" path="res://assets/player/chara_move_sheet_attacks.png" id="4_5kev0"]
 [ext_resource type="Texture2D" uid="uid://dd2mqk7jaeqtg" path="res://assets/player/masks.png" id="5_2kjtw"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/States/CharacterStateMachine.gd" id="6_wfvl0"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/AirState.gd" id="6_wvrpb"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Moving/AirState.gd" id="6_wvrpb"]
 [ext_resource type="Script" path="res://scripts/variables/player_config.gd" id="7_5nfh0"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/IdleState.gd" id="7_xcc5y"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/ClimbingState.gd" id="9_0x0ia"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/CastingState.gd" id="10_v8iwg"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Moving/IdleState.gd" id="7_xcc5y"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Moving/ClimbingState.gd" id="9_0x0ia"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Attacking/CastingState.gd" id="10_v8iwg"]
 [ext_resource type="Script" path="res://scenes/HUD/HP_bar_label.gd" id="11_7sifh"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/DashingState.gd" id="11_bxnc5"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/WalkingState.gd" id="12_eyoi0"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Moving/DashingState.gd" id="11_bxnc5"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Moving/WalkingState.gd" id="12_eyoi0"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/States/input_check.gd" id="12_oovai"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/States/DeadState.gd" id="13_1kak5"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/controls.gd" id="17_msedg"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/forms/FormStateMachine.gd" id="18_2xi6w"]
-[ext_resource type="Script" path="res://scenes/game/characters/player/States/AttackState.gd" id="19_1v1dr"]
+[ext_resource type="Script" path="res://scenes/game/characters/player/States/Attacking/AttackState.gd" id="19_1v1dr"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/forms/no_form.gd" id="19_q3bpg"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/forms/Rock.gd" id="20_qotna"]
 [ext_resource type="Script" path="res://scenes/game/characters/player/forms/ice_form.gd" id="21_1biub"]
@@ -1128,8 +1128,13 @@ can_wall_jump = false
 
 [node name="Attack" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("19_1v1dr")
+basic_blast_cast_duration = null
+can_move = null
+can_fall = null
 can_dash = false
+can_jump = null
 can_attack = false
+can_double_jump = null
 can_wall_jump = false
 can_climb = false
 can_cast = false
@@ -1178,6 +1183,8 @@ can_move = false
 can_fall = false
 can_dash = false
 can_jump = false
+can_attack = null
+can_double_jump = null
 can_wall_jump = false
 can_climb = false
 can_cast = false
