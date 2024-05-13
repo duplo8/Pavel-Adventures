@@ -1,12 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://06cn7k1ot0my"]
+[gd_scene load_steps=7 format=3 uid="uid://06cn7k1ot0my"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gjuw"]
-size = Vector2(338, 20)
+size = Vector2(640, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fopb3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mcrp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6sch"]
+radius = 4.15759
+height = 31.1052
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7liw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tvqk"]
+radius = 9.0
 
 [node name="BossFight" type="Node2D"]
+metadata/_edit_vertical_guides_ = [363.0]
 
 [node name="floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(171, 12)
+position = Vector2(322, 12)
 shape = SubResource("RectangleShape2D_0gjuw")
+
+[node name="Boss" type="RigidBody2D" parent="."]
+position = Vector2(311, -18)
+
+[node name="Body" type="CollisionShape2D" parent="Boss"]
+shape = SubResource("CapsuleShape2D_fopb3")
+
+[node name="Head" type="CollisionShape2D" parent="Boss"]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_1mcrp")
+
+[node name="Hand" type="CollisionShape2D" parent="Boss"]
+position = Vector2(-10, -10)
+rotation = -0.763416
+shape = SubResource("CapsuleShape2D_n6sch")
+
+[node name="Fist" type="CollisionShape2D" parent="Boss"]
+position = Vector2(-18, -19)
+shape = SubResource("CircleShape2D_q7liw")
+
+[node name="Booty" type="CollisionShape2D" parent="Boss"]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_2tvqk")
